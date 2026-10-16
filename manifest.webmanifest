@@ -1,18 +1,12 @@
 {
   "name": "Selah – Dein Gebetsjournal",
   "short_name": "Selah",
-  "description": "Ein privates Gebetsjournal für deinen Weg mit Gott.",
-  "start_url": "./index.html",
+  "description": "Ein ruhiger, privater Ort für Gebet, Dankbarkeit und Zeit mit Gottes Wort.",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f4ed",
-  "theme_color": "#20332c",
-  "icons": [
-    {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "background_color": "#f6f3eb",
+  "theme_color": "#183c32",
+  "lang": "de",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
