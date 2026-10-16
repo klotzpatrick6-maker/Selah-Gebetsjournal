@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#20332c">
+<meta name="description" content="Dein privates christliches Gebetsjournal für Gedanken, Gebetsanliegen und Dankbarkeit.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+
+<title>Selah – Dein Gebetsjournal</title>
+<style>
+:root{--ink:#24352e;--muted:#68766d;--paper:#f7f4ed;--card:#fffdf8;--line:#e7e1d5;--sage:#dce5d8;--gold:#bd9860;--deep:#20332c}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;min-height:100vh;display:grid;grid-template-columns:230px 1fr}.side{background:var(--deep);color:#f8f5ee;padding:28px 18px;display:flex;flex-direction:column;gap:24px}.brand{font:italic 30px Georgia,serif;letter-spacing:.03em}.brand small{display:block;font:11px system-ui;letter-spacing:.18em;text-transform:uppercase;color:#c8d3c7;margin-top:3px}.nav{display:grid;gap:7px}.nav button{border:0;text-align:left;color:#e8ede6;background:transparent;padding:12px;border-radius:12px}.nav button.active,.nav button:hover{background:#354a40}.side-note{margin-top:auto;color:#bfcbbf;font:italic 14px Georgia,serif}.main{padding:32px clamp(18px,4vw,48px) 60px;min-width:0}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-size:11px;font-weight:700}.date{color:var(--muted);font-size:13px}.hero{background:linear-gradient(125deg,#263d33,#506451);color:#fffaf0;border-radius:22px;padding:30px;position:relative;overflow:hidden}.hero:after{content:"✦";position:absolute;right:28px;top:4px;font:110px Georgia,serif;color:#ffffff12}.hero h1{font:clamp(28px,4vw,42px)/1.12 Georgia,serif;font-weight:400;margin:8px 0 12px;max-width:560px}.hero p{color:#e0e8dd;max-width:520px;margin:0 0 20px}.btn{border:0;border-radius:11px;background:var(--deep);color:white;padding:11px 16px;font-weight:650}.btn.light{background:#f8f4e9;color:var(--deep)}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.small{padding:7px 10px;font-size:13px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 14px}.section-head h2{font:25px Georgia,serif;font-weight:400;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:19px;min-width:0}.card h3{font:21px Georgia,serif;font-weight:400;margin:4px 0 8px}.card p{margin:6px 0;color:var(--muted)}.metric{font:32px Georgia,serif}.quote{font:21px/1.4 Georgia,serif}.muted{color:var(--muted)}.form{display:grid;gap:12px}.form label{display:grid;gap:5px;font-size:13px;font-weight:650;color:var(--muted)}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fffefa;color:var(--ink);outline-color:#819680}textarea{min-height:105px;resize:vertical}.form-actions{display:flex;gap:8px;flex-wrap:wrap}.entry{padding:16px 0;border-bottom:1px solid var(--line)}.entry:last-child{border-bottom:0}.entry-title{font-weight:700}.entry-meta{font-size:12px;color:var(--muted);margin-bottom:5px}.pill{display:inline-block;border-radius:99px;padding:3px 9px;background:var(--sage);font-size:11px;font-weight:700}.pill.done{background:#e8dfca}.row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.search{max-width:320px}.empty{padding:24px;text-align:center;color:var(--muted)}.reflection{background:#f0ede3;border-radius:12px;padding:14px;margin:12px 0}.hidden{display:none!important}.footer{font-size:12px;color:var(--muted);margin-top:30px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--deep);color:white;padding:11px 18px;border-radius:12px;display:none;z-index:5}.danger{color:#9c443a}.tiny{font-size:12px}@media(max-width:720px){.app{display:block}.side{padding:14px 14px 10px;gap:12px}.brand{font-size:25px}.brand small{display:inline;margin-left:8px}.nav{display:flex;overflow-x:auto;gap:5px}.nav button{white-space:nowrap;padding:9px 11px;font-size:13px}.side-note{display:none}.main{padding:20px 15px 42px}.grid{grid-template-columns:1fr}.hero{padding:23px}.top{align-items:flex-start}.search{max-width:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand">Selah <small>Dein Gebetsjournal</small></div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="home">⌂ &nbsp; Übersicht</button>
+    <button data-page="journal">▤ &nbsp; Tagebuch</button>
+    <button data-page="prayers">♡ &nbsp; Gebetsanliegen</button>
+    <button data-page="gratitude">✧ &nbsp; Dankbarkeit</button>
+    <button data-page="impulses">☼ &nbsp; Impulse</button>
+    <button data-page="review">↻ &nbsp; Rückblicke</button>
+  </nav>
+  <div class="side-note">„Seid stille und erkennet,<br> dass ich Gott bin.“<br><br>Psalm 46,11</div>
+</aside>
+<main class="main">
+  <div class="top"><div><div class="eyebrow" id="pageKicker">Dein Raum der Stille</div><div class="date" id="today"></div></div><button class="btn ghost small" id="exportBtn">Daten exportieren</button></div>
+  <section id="content"></section>
+  <div class="footer">Selah ist ein lokaler Prototyp. Deine Einträge bleiben in diesem Browser auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='selah_prayer_journal_v1';
+const todayISO=()=>new Date().toLocaleDateString('en-CA');
+const fmt=d=>{if(!d)return '';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'})};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const seed={
+ entries:[], prayers:[], gratitude:[],
+ impulses:[
+ {title:'In der Stille hören',verse:'„Seid stille und erkennet, dass ich Gott bin.“ – Psalm 46,11',body:'Stille ist nicht verlorene Zeit. Sie schafft Raum, in dem wir unsere Unruhe vor Gott bringen und uns neu an seiner Wahrheit ausrichten können.',questions:['Was lenkt mich gerade am meisten ab?','Was möchte ich Gott heute ehrlich sagen?','Welche kleine Sache kann ich heute in Ruhe und bewusst tun?']},
+ {title:'Beten ohne perfekte Worte',verse:'„Euer Vater weiß, was ihr benötigt, ehe ihr ihn bittet.“ – Matthäus 6,8',body:'Gebet muss keine perfekte Formulierung sein. Du darfst ehrlich kommen – mit Dank, Fragen, Angst oder Schweigen. Gott lädt dich zur Beziehung ein, nicht zu einer Vorführung.',questions:['Was fällt mir schwer auszusprechen?','Wo darf ich heute ehrlich statt perfekt sein?','Für wen möchte ich beten?']},
+ {title:'Treue im Kleinen',verse:'„Wer im Geringsten treu ist, der ist auch im Großen treu.“ – Lukas 16,10',body:'Geistliches Wachstum geschieht oft unscheinbar: ein kurzer Moment im Wort, ein Schritt des Gehorsams, eine versöhnende Nachricht. Bitte Gott um Treue für den nächsten Schritt.',questions:['Was ist der nächste gute Schritt, den ich kenne?','Wo schiebe ich Gehorsam auf?','Wie könnte Treue heute praktisch aussehen?']},
+ {title:'Gnade statt Selbstrettung',verse:'„Meine Gnade genügt dir.“ – 2. Korinther 12,9',body:'Du musst dich nicht selbst geistlich retten. Das Evangelium beginnt mit Gottes Gnade. Aus seiner Liebe heraus dürfen wir umkehren, lernen und neu anfangen.',questions:['Wo versuche ich, mir Gottes Liebe zu verdienen?','Was bedeutet Jesu Gnade heute konkret für mich?','Was darf ich ihm neu anvertrauen?']},
+ {title:'Dankbarkeit mit offenen Augen',verse:'„Dankt in allem.“ – 1. Thessalonicher 5,18',body:'Dankbarkeit leugnet Schmerz nicht. Sie hilft uns, mitten im Unvollkommenen Gottes Gaben wahrzunehmen – einen Menschen, Versorgung, Kraft oder einen kleinen Lichtblick.',questions:['Welche drei Dinge waren heute gut?','Wer hat mir in letzter Zeit Gutes getan?','Wofür möchte ich Gott danken, obwohl nicht alles leicht ist?']}
+ ]
+};
+let data;try{data=JSON.parse(localStorage.getItem(KEY))||structuredClone(seed)}catch(e){data=structuredClone(seed)}
+if(!data.impulses||!data.impulses.length)data.impulses=seed.impulses;
+let page='home', searchTerm='';
+const $=s=>document.querySelector(s);
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){toast('Speicher voll. Bitte Daten exportieren.');}}
+function toast(s){const t=$('#toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',2400)}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function setPage(p){page=p;document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button[data-page]');if(b)setPage(b.dataset.page)});
+$('#today').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+function head(title,desc=''){return `<div class="section-head"><div><h2>${title}</h2>${desc?`<p>${desc}</p>`:''}</div></div>`}
+function entryForm(){return `<div class="card"><h3>Neuer Tagebucheintrag</h3><form id="entryForm" class="form">
+<label>Datum<input name="date" type="date" value="${todayISO()}" required></label>
+<label>Überschrift (optional)<input name="title" placeholder="Was bewegt mich heute?"></label>
+<label>Gedanken und Gebet<textarea name="body" placeholder="Schreibe ehrlich auf, was dich beschäftigt …" required></textarea></label>
+<label>Bibelvers oder Erkenntnis<textarea name="verse" placeholder="Ein Vers, ein Gedanke, ein Eindruck …" style="min-height:65px"></textarea></label>
+<div class="form-actions"><button class="btn">Eintrag speichern</button></div></form></div>`}
+function prayerForm(){return `<div class="card"><h3>Neues Gebetsanliegen</h3><form id="prayerForm" class="form">
+<label>Anliegen<input name="title" placeholder="Wofür möchtest du beten?" required></label>
+<label>Details / Gebet<textarea name="body" placeholder="Du kannst hier auch Namen oder weitere Gedanken notieren …"></textarea></label>
+<label>Kategorie<select name="category"><option>Persönlich</option><option>Familie</option><option>Freunde</option><option>Gemeinde</option><option>Arbeit</option><option>Dank</option><option>Sonstiges</option></select></label>
+<label>Status<select name="status"><option>Offen</option><option>Ich bete weiter</option><option>Erhört</option><option>Archiviert</option></select></label>
+<label>Datum<input name="date" type="date" value="${todayISO()}"></label>
+<div class="form-actions"><button class="btn">Anliegen speichern</button></div></form></div>`}
+function listEntries(items){if(!items.length)return '<div class="empty">Hier ist noch nichts eingetragen. Du kannst jederzeit beginnen.</div>';return items.map(x=>`<div class="entry"><div class="entry-meta">${fmt(x.date)}${x.category?' · '+esc(x.category):''}</div><div class="row"><div><div class="entry-title">${esc(x.title||'Mein Eintrag')}</div><div style="white-space:pre-wrap;margin-top:6px">${esc(x.body||'')}</div>${x.verse?`<div class="reflection">${esc(x.verse)}</div>`:''}</div><button class="btn ghost small" data-delete="${x.id}" data-kind="${x.kind||'entry'}" title="Eintrag löschen">Löschen</button></div></div>`).join('')}
+function render(){
+ const c=$('#content');const total=data.entries.length, active=data.prayers.filter(p=>!['Erhört','Archiviert'].includes(p.status)).length, answered=data.prayers.filter(p=>p.status==='Erhört').length;
+ const recent=data.entries.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
+ const todayImp=data.impulses[(new Date().getDate()-1)%data.impulses.length];
+ const kicker={home:'Dein Raum der Stille',journal:'Gedanken bewahren',prayers:'Menschen und Anliegen vor Gott bringen',gratitude:'Das Gute wahrnehmen',impulses:'Wort · Reflexion · Gebet',review:'Zurückblicken und erkennen'};$('#pageKicker').textContent=kicker[page]||'Selah';
+ if(page==='home') c.innerHTML=`
+ <div class="hero"><div class="eyebrow" style="color:#cbd8c9">Ein Moment mit Gott</div><h1>Du darfst zur Ruhe kommen.</h1><p>Nimm dir einen Augenblick, werde ehrlich vor Gott und halte fest, was dich bewegt. Du musst keine perfekten Worte finden.</p><button class="btn light" onclick="setPage('journal')">Gebetszeit beginnen ↗</button></div>
+ <div class="grid" style="margin-top:16px"><div class="card"><div class="eyebrow">Dein Tagebuch</div><div class="metric">${total}</div><p>gespeicherte Einträge</p><button class="btn ghost small" onclick="setPage('journal')">Zum Tagebuch</button></div><div class="card"><div class="eyebrow">Gebetsanliegen</div><div class="metric">${active}</div><p>offene Anliegen · ${answered} als erhört markiert</p><button class="btn ghost small" onclick="setPage('prayers')">Anliegen ansehen</button></div></div>
+ ${head('Impuls für heute','Lies langsam und nimm eine Frage mit in dein Gebet.')}<div class="card"><div class="eyebrow">Bibelgedanke</div><h3>${esc(todayImp.title)}</h3><div class="quote">${esc(todayImp.verse)}</div><p>${esc(todayImp.body)}</p><button class="btn" onclick="setPage('impulses')">Impuls öffnen</button></div>
+ ${head('Zuletzt festgehalten')}<div class="card">${listEntries(recent)}</div>`;
+ if(page==='journal') c.innerHTML=`${head('Mein Tagebuch','Ein persönlicher Ort für Gedanken, Gebete und Erkenntnisse.')}<div class="grid">${entryForm()}<div class="card"><h3>Alle Einträge</h3><input class="search" id="searchEntries" placeholder="Einträge durchsuchen …" value="${esc(searchTerm)}"><div id="entryList">${listEntries(filterEntries())}</div></div></div>`;
+ if(page==='prayers') c.innerHTML=`${head('Meine Gebetsanliegen','Halte fest, wofür du betest. Du kannst den Status jederzeit ändern.')}<div class="grid">${prayerForm()}<div class="card"><h3>Deine Anliegen</h3><label class="muted tiny">Nach Status filtern<select id="prayerFilter"><option>Alle</option><option>Offen</option><option>Ich bete weiter</option><option>Erhört</option><option>Archiviert</option></select></label><div id="prayerList">${listPrayers()}</div></div></div>`;
+ if(page==='gratitude') c.innerHTML=`${head('Dankbarkeit','Kleine und große Gaben bewusst wahrnehmen.')}<div class="grid"><div class="card"><h3>Wofür bin ich dankbar?</h3><form id="gratitudeForm" class="form"><label>Datum<input type="date" name="date" value="${todayISO()}"></label><label>Mein Dank<textarea name="body" placeholder="Heute bin ich dankbar für …" required></textarea></label><button class="btn">Dankbarkeit speichern</button></form><div class="reflection"><b>Eine Frage für heute</b><br>Wo hast du heute etwas Gutes empfangen, das du leicht übersehen könntest?</div></div><div class="card"><h3>Meine Dankbarkeitsnotizen</h3>${listEntries(data.gratitude.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>({...x,title:'Dankbarkeit',kind:'gratitude'})))}</div></div>`;
+ if(page==='impulses') c.innerHTML=`${head('Impulse für deinen Weg','Biblische Gedanken mit Fragen, die du direkt im Tagebuch beantworten kannst.')}<div class="grid">${data.impulses.map((x,i)=>`<article class="card"><div class="eyebrow">Impuls ${String(i+1).padStart(2,'0')} · 5 Minuten</div><h3>${esc(x.title)}</h3><div class="quote">${esc(x.verse)}</div><p>${esc(x.body)}</p><div class="reflection"><b>Fragen zur Reflexion</b><ol>${x.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ol></div><button class="btn" onclick="startReflection(${i})">Darüber schreiben</button></article>`).join('')}</div>`;
+ if(page==='review') c.innerHTML=`${head('Dein Weg mit Gott','Ein stiller Rückblick – ohne Leistungsdruck.')}<div class="grid"><div class="card"><div class="eyebrow">Tagebuch</div><div class="metric">${total}</div><p>Einträge, die du festgehalten hast.</p></div><div class="card"><div class="eyebrow">Gebet</div><div class="metric">${data.prayers.length}</div><p>Gebetsanliegen insgesamt · ${answered} als erhört markiert.</p></div></div><div class="card" style="margin-top:14px"><h3>Fragen für deinen Rückblick</h3><div class="reflection"><b>1. Was hat mich in letzter Zeit beschäftigt?</b><p>Suche in deinen alten Einträgen nach wiederkehrenden Themen.</p></div><div class="reflection"><b>2. Wofür kann ich heute danken?</b><p>Schau dir deine Dankbarkeitsnotizen und als erhört markierten Anliegen an.</p></div><div class="reflection"><b>3. Was möchte ich Gott neu anvertrauen?</b><p>Es ist in Ordnung, wenn manche Gebete noch offen sind. Schreibe deinen nächsten Schritt auf.</p></div><button class="btn" onclick="setPage('journal')">Rückblick im Tagebuch festhalten</button></div><div class="card" style="margin-top:14px"><h3>Letzte Tagebucheinträge</h3>${listEntries(data.entries.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,8))}</div>`;
+ bindForms();
+}
+function filterEntries(){const q=(searchTerm||'').toLowerCase();return data.entries.slice().sort((a,b)=>b.date.localeCompare(a.date)).filter(x=>(x.title+' '+x.body+' '+x.verse).toLowerCase().includes(q))}
+function listPrayers(){let f=$('#prayerFilter')?.value||'Alle';let arr=data.prayers.filter(p=>f==='Alle'||p.status===f).slice().sort((a,b)=>b.date.localeCompare(a.date));if(!arr.length)return '<div class="empty">Noch keine passenden Anliegen.</div>';return arr.map(p=>`<div class="entry"><div class="entry-meta">${fmt(p.date)} · ${esc(p.category)}</div><div class="row"><div style="flex:1"><div class="entry-title">${esc(p.title)}</div><p style="white-space:pre-wrap">${esc(p.body||'')}</p><span class="pill ${p.status==='Erhört'?'done':''}">${esc(p.status)}</span><div style="margin-top:9px"><select data-status="${p.id}" aria-label="Status ändern"><option ${p.status==='Offen'?'selected':''}>Offen</option><option ${p.status==='Ich bete weiter'?'selected':''}>Ich bete weiter</option><option ${p.status==='Erhört'?'selected':''}>Erhört</option><option ${p.status==='Archiviert'?'selected':''}>Archiviert</option></select></div></div><button class="btn ghost small" data-delete="${p.id}" data-kind="prayer">Löschen</button></div></div>`).join('')}
+function bindForms(){
+ const ef=$('#entryForm');if(ef)ef.onsubmit=e=>{e.preventDefault();const f=new FormData(ef);data.entries.push({id:uid(),date:f.get('date'),title:f.get('title'),body:f.get('body'),verse:f.get('verse')});save();toast('Dein Eintrag wurde gespeichert.');render()};
+ const pf=$('#prayerForm');if(pf)pf.onsubmit=e=>{e.preventDefault();const f=new FormData(pf);data.prayers.push({id:uid(),date:f.get('date')||todayISO(),title:f.get('title'),body:f.get('body'),category:f.get('category'),status:f.get('status')});save();toast('Gebetsanliegen gespeichert.');render()};
+ const gf=$('#gratitudeForm');if(gf)gf.onsubmit=e=>{e.preventDefault();const f=new FormData(gf);data.gratitude.push({id:uid(),date:f.get('date')||todayISO(),title:'Dankbarkeit',body:f.get('body'),kind:'gratitude'});save();toast('Dankbarkeit gespeichert.');render()};
+ const se=$('#searchEntries');if(se)se.oninput=()=>{searchTerm=se.value;$('#entryList').innerHTML=listEntries(filterEntries());bindDeletes()};
+ const filt=$('#prayerFilter');if(filt)filt.onchange=()=>{$('#prayerList').innerHTML=listPrayers();bindAll()};
+ bindAll();
+}
+function bindDeletes(){document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{if(!confirm('Diesen Eintrag wirklich löschen?'))return;const k=b.dataset.kind;const prop=k==='prayer'?'prayers':k==='gratitude'?'gratitude':'entries';data[prop]=data[prop].filter(x=>x.id!==b.dataset.delete);save();render();toast('Eintrag gelöscht.')})}
+function bindAll(){bindDeletes();document.querySelectorAll('[data-status]').forEach(s=>s.onchange=()=>{const p=data.prayers.find(x=>x.id===s.dataset.status);if(p){p.status=s.value;save();render();toast('Status aktualisiert.')}})}
+function startReflection(i){const x=data.impulses[i];setPage('journal');setTimeout(()=>{const ta=$('#entryForm textarea[name="body"]');const title=$('#entryForm input[name="title"]');const verse=$('#entryForm textarea[name="verse"]');if(title)title.value='Reflexion: '+x.title;if(ta)ta.value=x.questions.map((q,n)=>(n+1)+'. '+q+'\n').join('\n')+'\nMeine Gedanken:\n';if(verse)verse.value=x.verse;ta?.focus()},0)}
+$('#exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({app:'Selah Gebetsjournal',exportiert:new Date().toISOString(),...data},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='selah-gebetsjournal-sicherung-'+todayISO()+'.json';a.click();URL.revokeObjectURL(a.href);toast('Sicherung wurde exportiert.')};
+render();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
